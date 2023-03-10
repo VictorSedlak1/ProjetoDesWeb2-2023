@@ -7,62 +7,31 @@ function incrementarContador() {
   contador.value++
 }
 function decrementarContador() {
+  if (contador.value >0) {
   contador.value--
+  }
 }
+function zerarContador(){
+  contador.value = 0
+}
+
+
 
 onMounted(() => {
   console.log(`O valor inicial do contador é ${contador.value}.`)
 })
 </script>
 
-
 <template>
-    <!-- Template já apresentada -->
+  <button @click="incrementarContador">Incrementar</button>
+  <button @click="decrementarContador">Decrementar</button>
+  <button @click="zerarContador">zerar</button>
+
+  <p>Valor do contador é: {{ contador }}</p>
 </template>
 
 <style scoped>
-    /* Estilos já apresentados */
-</style>
-
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
-</template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+button {
+  font-weight: bold;
 }
 </style>
