@@ -56,8 +56,8 @@ const nome = 'victor'
       Contador: {{ contador }}
       <button @click=" contador++">+</button>
       <button @click=" contador--">-</button>
-      <div v-if="contador > 10">O contador é maior que 10</div>
-      <div v-else-if="contador < 10">O contador é menor que 10</div>
+      <div v-if="contador > 10" class="verde">O contador é maior que 10</div>
+      <div v-else-if="contador < 10" class="vermelho">O contador é menor que 10</div>
       <div v-else>O contador é 10</div>
       <hr />
       <div v-if="contador % 2 === 0"> É par</div>
@@ -82,5 +82,13 @@ h1 {
   color: white;
   font-weight: bold;
   font-size: 1.5em;
+}
+
+.verde{
+  color: green;
+}
+
+.vermelho{
+  color: red;
 }
 </style>
