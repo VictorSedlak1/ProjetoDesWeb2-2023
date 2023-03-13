@@ -21,11 +21,16 @@ onMounted(() => {
   console.log(`O valor inicial do contador é ${contador.value}.`)
 })
 
-const nome = 'João'
-    const idade = 25
+const nome = 'Victor'
+    const idade = 16
 
     function inverter(texto) {
         return texto.split('').reverse().join('')
+    }
+
+    function inverterMaiusculo(texto) {
+      const invertido = inverter(texto)
+      return invertido.toUpperCase()
     }
 
     function saudacao() {
@@ -47,7 +52,7 @@ const nome = 'João'
         <hr />
         <p>Para completar 50 anos faltam: {{ 50 - idade }}  anos</p>
         <p>O nome tem {{ nome.length }}  caracteres</p>
-        <p>O nome invertido é: {{ inverter(nome) }} </p>
+        <p>O nome invertido é: {{ inverter(nome).toUpperCase() }} </p>
         <hr />
         <p> Exemplo de saudação usando função</p>
         <p> {{ saudacao() }}  </p>
